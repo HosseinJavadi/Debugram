@@ -19,7 +19,6 @@
   </Target>
   <ItemGroup>
     <None Include=".eslintrc.json" />
-    <None Include=".gitignore" />
     <None Include=".next\build-manifest.json" />
     <None Include=".next\cache\webpack\client-development-fallback\0.pack" />
     <None Include=".next\cache\webpack\client-development-fallback\1.pack" />
@@ -3995,7 +3994,6 @@
     <None Include="package.json" />
     <None Include="public\favicon.ico" />
     <None Include="public\vercel.svg" />
-    <None Include="README.md" />
     <None Include="styles\globals.scss" />
   </ItemGroup>
   <ItemGroup>
