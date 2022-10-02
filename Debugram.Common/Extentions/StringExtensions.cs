@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common.Utilities
+namespace Debugram.Common.Utilities
 {
     public static class StringExtensions
     {

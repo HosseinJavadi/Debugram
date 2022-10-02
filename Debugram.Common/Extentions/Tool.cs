@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace Common.Utilities
+namespace Debugram.Common.Utilities
 {
     public static class Tool
     {

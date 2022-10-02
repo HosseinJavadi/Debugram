@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Common.Utilities
+namespace Debugram.Common.Utilities
 {
     public static class SecurityHelper
     {
