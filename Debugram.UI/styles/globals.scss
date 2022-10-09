@@ -4,7 +4,25 @@
 
 @layer base{
   :root{
-    --bg-primary: 255 115 179;
+
+    --border-0: #000000;
+    --border-1: #16001e;
+    --border-2: #1e1014;
+    --border-3: #2f242c;
+    --border-4: #1f271b;
+
+    --color-0: #000000;
+    --color-1: #16001e;
+    --color-2: #1e1014;
+    --color-3: #2f242c;
+    --color-4: #1f271b;
+
+     --back-0: #000000;
+     --back-1: #16001e;
+     --back-2: #1e1014;
+     --back-3: #2f242c;
+     --back-4: #1f271b;
+
   }
 }
 html,
@@ -16,7 +34,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+#__next{
+  width: 100%;
+  height: 100%;
+}
 a {
   color: inherit;
   text-decoration: none;
