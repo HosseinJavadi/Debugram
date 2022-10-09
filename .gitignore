@@ -286,6 +286,7 @@ FakesAssemblies/
 node_modules/
 
 .next/
+.next/*
 
 # Visual Studio 6 build log
 *.plg
