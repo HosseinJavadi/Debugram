@@ -33,8 +33,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Debugram.Entities", "Debugr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Debugram.Api", "Debugram.Api\Debugram.Api.csproj", "{DAC7E14A-7DDE-4FEF-9E8A-F7BDD83E6183}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Debugram.UI", "Debugram.UI\Debugram.UI.esproj", "{742B76AF-8682-465D-880B-78884447D0D0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,12 +75,6 @@ Global
 		{DAC7E14A-7DDE-4FEF-9E8A-F7BDD83E6183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAC7E14A-7DDE-4FEF-9E8A-F7BDD83E6183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAC7E14A-7DDE-4FEF-9E8A-F7BDD83E6183}.Release|Any CPU.Build.0 = Release|Any CPU
-		{742B76AF-8682-465D-880B-78884447D0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{742B76AF-8682-465D-880B-78884447D0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{742B76AF-8682-465D-880B-78884447D0D0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{742B76AF-8682-465D-880B-78884447D0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{742B76AF-8682-465D-880B-78884447D0D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{742B76AF-8682-465D-880B-78884447D0D0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,7 +89,6 @@ Global
 		{E90C4BB9-16EE-46C0-8540-BB6D35D56BE7} = {AB3A0A1F-0E81-4809-8B50-950C96B9184A}
 		{11F76F65-01B7-42FC-B677-A319416D6FF6} = {E9D2F533-81A5-4E86-8FD3-CCA6FFA4D770}
 		{DAC7E14A-7DDE-4FEF-9E8A-F7BDD83E6183} = {50F6BD8F-8E49-4325-B716-2AFB75CE34A8}
-		{742B76AF-8682-465D-880B-78884447D0D0} = {50F6BD8F-8E49-4325-B716-2AFB75CE34A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD4A5BA3-99B6-4BE5-93DE-123CBA06F7AD}
