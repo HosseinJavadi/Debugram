@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Diagnostics;
 using System.Net;
 
 namespace Debugram.WebFramework.Middleweres
@@ -106,7 +107,7 @@ namespace Debugram.WebFramework.Middleweres
                     message = JsonConvert.SerializeObject(dic);
                 }
             }
-        }
 
+        }
     }
 }
