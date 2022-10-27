@@ -1,8 +1,8 @@
 ﻿using Debugram.Common.AppConfig;
+using Debugram.CommonModel.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -18,13 +18,13 @@ namespace Debugram.Services.JWTServices
         {
             this.appConfig = appConfig.Value;
         }
-        public async Task<string> Generate(dynamic user) //(dynamic) this will should change
+        public string Generate(UserViewModel user) //(dynamic) this will should change
         {
             var secretKey = Encoding.UTF8.GetBytes(appConfig.JwtSetting.SecretKey);
             var signingCredential = new SigningCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.HmacSha256Signature);
             var encryptCredentials = new EncryptingCredentials(new SymmetricSecurityKey(secretKey), SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256);
 
-            var claims = await _getClaims(user);
+            var claims =  _getClaims(user);
             var descriptor = new SecurityTokenDescriptor()
             {
                 Issuer = appConfig.JwtSetting.ValidIssuer,
@@ -45,18 +45,17 @@ namespace Debugram.Services.JWTServices
         }
 
 
-        private async Task<IEnumerable<Claim>> _getClaims(dynamic user)
+        private IEnumerable<Claim> _getClaims(UserViewModel user)
         {
 
-            var securitystamptype = new ClaimsIdentityOptions().SecurityStampClaimType;
+           // var securitystamptype = new ClaimsIdentityOptions().SecurityStampClaimType;
 
             var claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, user.username),
-                new Claim(ClaimTypes.GivenName, user.fullname),
-                new Claim(ClaimTypes.Gender, user.gender.tostring()),
-                new Claim(securitystamptype,user.securitystamp.tostring()),
-                new Claim(ClaimTypes.NameIdentifier,user.id.tostring())
+                new Claim(ClaimTypes.Name, user.FullName),
+                new Claim(ClaimTypes.GivenName, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                new Claim(ClaimTypes.Email,user.Email),
             };
             return claims;
         }

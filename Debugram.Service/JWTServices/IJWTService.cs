@@ -1,9 +1,11 @@
 ﻿
+using Debugram.CommonModel.ViewModel;
+
 namespace Debugram.Services.JWTServices
 {
     public interface IJWTService
     {
-        Task<string> Generate(dynamic user);
+        string Generate(UserViewModel user);
 
     }
 }

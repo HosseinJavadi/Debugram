@@ -12,7 +12,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
-  </ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Debugram.WebFramework\Debugram.WebFramework.csproj" />
@@ -25,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\" />
+    <Folder Include="Controller\Admin\" />
   </ItemGroup>
 
 </Project>

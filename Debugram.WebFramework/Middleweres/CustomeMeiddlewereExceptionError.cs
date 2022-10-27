@@ -48,7 +48,7 @@ namespace Debugram.WebFramework.Middleweres
             catch (AppException exception)
             {
                 apiStatusCode = exception.ResultApiStatusCode;
-
+                httpStatusCode = exception.HttpStatusCode;
                     message = exception.Message;
                 await WriteToResponseAsync();
             }
@@ -84,7 +84,7 @@ namespace Debugram.WebFramework.Middleweres
                 };
                 var json = JsonConvert.SerializeObject(result,setting);
 
-
+                context.Response.StatusCode = (int)httpStatusCode;
                 context.Response.ContentType = "application/json;charset=utf-8";
                 await context.Response.WriteAsync(json);
             }

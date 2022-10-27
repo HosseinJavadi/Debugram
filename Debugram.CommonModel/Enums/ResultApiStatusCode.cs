@@ -41,6 +41,15 @@ namespace Debugram.CommonModel.Enums
 
 
         [Display(Name = "کد ارسالی اشتباه میباشد")]
-        CodeNotMatch = 10
+        CodeNotMatch = 10,
+
+        [Display(Name = "ایمیل وارد شده تکراری می باشد")] // Confilict Email
+        ExistEmail = 11,
+
+        [Display(Name = "ایمیل وجود ندارد")]// Email Not Found 
+        EmailNotFound = 12,
+
+        [Display(Name = "کاربری وجود ندارد")]// User Not Found
+        NotFoundUser = 13
     }
 }
