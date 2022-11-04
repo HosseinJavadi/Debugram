@@ -1,13 +1,18 @@
 using Debugram.Common.AppConfig;
-using Debugram.Common.AutoMapper;
+using Debugram.CommonModel.AutoMapper;
 using Debugram.Data.Context;
 using Debugram.Data.Contracts;
 using Debugram.Data.Repositories;
 using Debugram.Data.Service.IService.Account;
-using Debugram.Data.Service.Service;
+using Debugram.Data.Service.Service.Account;
+using Debugram.Service.ModelValidation;
 using Debugram.Services.JWTServices;
+using Debugram.WebFramework.Authorize;
 using Debugram.WebFramework.Middleweres;
 using Debugram.WebFramework.ServiceConfiguration;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using NLog.Web;
 
@@ -27,11 +32,15 @@ try
     //builder.Host.ConfigureLogging(n => n.ClearProviders());
 
     builder.Services.Configure<AppConfig>(builder.Configuration.GetSection("AppConfig"));
+    builder.Services.Configure<ApiBehaviorOptions>(options =>
+    {
+        options.SuppressModelStateInvalidFilter = true;
+    });
 
     builder.Services.AddDbContext<ApplicationDbContext>(n => n.UseSqlServer(connectionString));
     builder.Services.AddScoped<IJWTService, JWTService>();
     builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
-    builder.Services.AddScoped<IAutoMapperConfiguration, AutoMapperConfiguration>();
+    builder.Services.AddSingleton<IAutoMapperConfiguration, AutoMapperConfiguration>();
     builder.Services.AddScoped<IUserRepository, UserRepository>();
     builder.Services.AddScoped<IAccountService, AccountService>();
     builder.Services.AddEndpointsApiExplorer();
@@ -42,6 +51,12 @@ try
        options =>
        {
            options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+           options.Filters.Add(typeof(ApiModelValidation));
+
+           var policy = new AuthorizationPolicyBuilder()
+                 .RequireAuthenticatedUser()
+                 .Build();
+           options.Filters.Add(new ApiAuthorize(AppConfigConfiguration,policy));
        });
 
     var app = builder.Build();

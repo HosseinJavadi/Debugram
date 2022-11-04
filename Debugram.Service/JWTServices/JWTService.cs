@@ -48,14 +48,14 @@ namespace Debugram.Services.JWTServices
         private IEnumerable<Claim> _getClaims(UserViewModel user)
         {
 
-           // var securitystamptype = new ClaimsIdentityOptions().SecurityStampClaimType;
+            var securitystamptype = new ClaimsIdentityOptions().SecurityStampClaimType;
 
             var claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, user.FullName),
-                new Claim(ClaimTypes.GivenName, user.UserName),
-                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.FullName),            
+                new Claim(ClaimTypes.NameIdentifier,user.UserId),
                 new Claim(ClaimTypes.Email,user.Email),
+                new Claim(securitystamptype,user.SecurityStamp.Value.ToString()),
             };
             return claims;
         }

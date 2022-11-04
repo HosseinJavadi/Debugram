@@ -1,4 +1,4 @@
-﻿using Debugram.CommonModel.Enums;
+﻿using Debugram.Common.Enums;
 
 namespace Debugram.Common.CustomeException
 {

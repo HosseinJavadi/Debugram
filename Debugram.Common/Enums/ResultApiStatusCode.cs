@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Debugram.CommonModel.Enums
+namespace Debugram.Common.Enums
 {
     public enum ResultApiStatusCode
     {
@@ -27,14 +27,14 @@ namespace Debugram.CommonModel.Enums
         [Display(Name = "خطایی در پردازش رخ داد")]
         LogicError = 5,
 
-        [Display(Name = "خطای احراز هویت")]
+        [Display(Name = "دسترسی ندارید")]
         UnAuthorized = 6,
 
         [Display(Name = "شماره همراه وارد شده قبلا ثبت نام شده")]
         HasPhoneNumber = 7,
 
-        [Display(Name = "رمز عبور یا شماره همراه اشتباه میباشد")]
-        MistakePhoneOrPassword = 8,
+        [Display(Name = "رمز عبور یا ایمیل اشتباه میباشد")]
+        MistakeEmailOrPassword = 8,
 
         [Display(Name = "شماره همراه یا تلفن همراه نباید خالی باشد")]
         EmptyPhoneOrPassword = 9,
@@ -50,6 +50,22 @@ namespace Debugram.CommonModel.Enums
         EmailNotFound = 12,
 
         [Display(Name = "کاربری وجود ندارد")]// User Not Found
-        NotFoundUser = 13
+        NotFoundUser = 13,
+
+        [Display(Name = "ایمیل وارد شده قبلا ثبت نام کرده است")]// Has Email In Database :(
+        HasEmailWhenRegister = 14,
+
+        [Display(Name = "رمز عبور کمتر از 6 کاراکتر میباشد")]// Password < 6 Error (:
+        PasswordLength = 15,
+
+
+        [Display(Name = "مقادیر ارسالی نا معتبر میباشد")]
+        InValidParameters = 16,
+
+        [Display(Name = "رمز عبور باید دارای کارکتر خاص باشد")]
+        PsaswordNotValidSpecialCharacters = 17,
+
+        [Display(Name = "رمز عبور باید دارای عدد باشد")]
+        PsaswordNotValidNumber = 18,
     }
 }

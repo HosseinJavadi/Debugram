@@ -1,5 +1,5 @@
-﻿using Debugram.Common.Utilities;
-using Debugram.CommonModel.Enums;
+﻿using Debugram.Common.Enums;
+using Debugram.Common.Utilities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Debugram.WebFramework.Principles

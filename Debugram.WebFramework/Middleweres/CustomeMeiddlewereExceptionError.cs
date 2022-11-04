@@ -1,5 +1,5 @@
 ﻿using Debugram.Common.CustomeException;
-using Debugram.CommonModel.Enums;
+using Debugram.Common.Enums;
 using Debugram.WebFramework.Principles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -8,8 +8,9 @@ namespace Debugram.Common.AppConfig
 {
     public class AppConfig
     {
+        public string PrivateKey { get; set; }
+
         public JwtSetting JwtSetting { get; set; }
-        public ElmahSetting Elmah { get; set; }
     }
     public class JwtSetting
     {
@@ -29,10 +30,5 @@ namespace Debugram.Common.AppConfig
         public int NotBefore { get; set; }
         public string EncryptKey { get; set; }
 
-    }
-    public class ElmahSetting
-    {
-        public string Key { get; set; }
-        public string ElmahConnectionString { get; set; }
     }
 }

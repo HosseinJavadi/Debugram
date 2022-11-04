@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Debugram.Common\Debugram.Utilities.csproj" />
+    <ProjectReference Include="..\Debugram.AdminModel\Debugram.AdminModel.csproj" />
+    <ProjectReference Include="..\Debugram.CommonModel\Debugram.CommonModel.csproj" />
+    <ProjectReference Include="..\Debugram.Model\Debugram.Model.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
+using Debugram.CommonModel.InputModel.Account;
 using Debugram.CommonModel.ViewModel;
 using Debugram.Entities.ModelDbContext;
 
 
-namespace Debugram.Common.AutoMapper
+namespace Debugram.CommonModel.AutoMapper
 {
     public class AutoMapperConfiguration: IAutoMapperConfiguration
     {
@@ -14,6 +15,7 @@ namespace Debugram.Common.AutoMapper
             {
                 n.CreateMap<UserViewModel, User>();
                 n.CreateMap<User, UserViewModel>();
+                n.CreateMap<RegisterInputModel,User>();
             });
         }
 

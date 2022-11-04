@@ -18,6 +18,7 @@ namespace Debugram.Entities.ModelDbContext
         public string? AvatarAddress { get; set; }
         public string Password { get; set; } = null!;
         public string? Biography { get; set; }
+        public Guid? SecurityStamp { get; set; }
         public bool? IsActive { get; set; }
         public bool IsDelete { get; set; }
         public DateTime InsertDate { get; set; }
