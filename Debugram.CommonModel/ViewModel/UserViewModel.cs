@@ -33,8 +33,11 @@ namespace Debugram.CommonModel.ViewModel
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
 
         public string? Biography { get; set; }
+        [JsonIgnore]
         public bool? IsActive { get; set; }
         public Guid? SecurityStamp { get; set; }
+        [JsonIgnore]
+
         public bool IsDelete { get; set; }
         public DateTime InsertDate { get; set; }
     }
